@@ -14,10 +14,13 @@ server.on('request', (req, res) => {
     let body = [];
     req.on('data', (chunk) => {
 	body.push(chunk);
-	console.log('chunk');
+	console.log('chunk:');
+	console.log(chunk);
     }).on('end', () => {
         body = Buffer.concat(body).toString();
-	console.log('chunk end');
+	console.log('chunk:');
+	console.log(chunk);
+	console.log('end:');
     });
     res.statusCode = 200;
     res.setHeader('content-type', 'text/html');
