@@ -17,7 +17,7 @@ server.on('request', (req, res) => {
 });
 
 let body = [];
-request.on('data', (chunk) => {
+req.on('data', (chunk) => {
     body.push(chunk);
 }).on('end', () => {
     body = Buffer.concat(body).toString();
