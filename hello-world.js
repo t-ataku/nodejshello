@@ -19,7 +19,7 @@ server.on('request', (req, res) => {
     }).on('end', () => {
         body = Buffer.concat(body).toString();
 	console.log('chunk:');
-	console.log(chunk);
+	console.log(body);
 	console.log('end:');
     });
     res.statusCode = 200;
