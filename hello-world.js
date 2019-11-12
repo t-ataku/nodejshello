@@ -26,7 +26,7 @@ server.on('request', (req, res) => {
     res.write('}<br>URI: ');
     res.write(url);
     res.write('<br>Body<br>');
-    res.write(body);
+    res.write(body.toString());
     res.write('<br><form method="POST"><input type=text value="Input something here"><br><input type=submit></form></body></html>');
     res.end();
 });
