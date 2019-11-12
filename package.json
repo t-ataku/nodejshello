@@ -1,0 +1,10 @@
+{
+  "name": "mynodehello",
+  "version": "0.0.1",
+  "description": "My first Node.js app",
+  "author": "ataku@XXX.XX-XXX.ne.jp",
+  "main": "hello-world.js",
+  "scripts": {
+    "start": "node hello-world.js"
+  }
+}
