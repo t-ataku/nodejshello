@@ -11,14 +11,14 @@ server.listen(port, hostname, () => {
 
 server.on('request', (req, res) => {
     const { method, url } = req;
+    let body = [];
+    req.on('data', (chunk) => {
+	body.push(chunk);
+    }).on('end', () => {
+        body = Buffer.concat(body).toString();
+    });
     res.statusCode = 200;
     res.setHeader('content-type', 'text/html');
     res.end(`<html><head><title>post form</title></head><body>METHOD: ${method}<br>URI: ${url}<br><form method="POST"><input type=text value="Input something here"><br><input type=submit></form></body></html>`);
 });
 
-let body = [];
-req.on('data', (chunk) => {
-    body.push(chunk);
-}).on('end', () => {
-    body = Buffer.concat(body).toString();
-});
