@@ -19,6 +19,15 @@ server.on('request', (req, res) => {
     });
     res.statusCode = 200;
     res.setHeader('content-type', 'text/html');
-    res.end(`<html><head><title>post form</title></head><body>METHOD: ${method}<br>URI: ${url}<br>Body${body}<br><form method="POST"><input type=text value="Input something here"><br><input type=submit></form></body></html>`);
+    res.write('<html><head><title>post form</title></head>');
+    res.write('<body>');
+    res.write('METHOD: ');
+    res.write(method);
+    res.write('}<br>URI: ');
+    res.write(url);
+    res.write('<br>Body<br>');
+    res.write(body);
+    res.write('<br><form method="POST"><input type=text value="Input something here"><br><input type=submit></form></body></html>');
+    res.end();
 });
 
