@@ -23,6 +23,7 @@ server.on('request', (req, res) => {
 	console.log(body.length);
 	console.log('end:');
     });
+    console.log('response is ready');
     res.statusCode = 200;
     res.setHeader('content-type', 'text/html');
     res.write('<html><head><title>post form</title></head>');
